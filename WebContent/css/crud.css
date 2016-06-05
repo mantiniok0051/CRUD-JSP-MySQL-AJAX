@@ -1,0 +1,47 @@
+body{padding-top: 5%;
+	 background-color: rgba(255,255,255,1.0);	 }
+	
+	.crud-jumbo-h1{color: rgba(255,255,0,1.0);}
+	.crud-jumbo-h2{color: rgba(255,128,0,1.0);}
+	.crud-jumbo-p{color: rgba(255,255,255,1.0);}
+	.crud-form{max-width: 100%;
+			   min-width: 85%;
+		   	   padding: 15px;
+		   	   margin: 0 auto;}
+					
+	.crud-pannel{max-width: 80%;
+		 		/*background-image: url(img/polygon-colors.jpg);
+		   		background-size: contain;*/
+		   		background-color: rgba(255,255,255,0.60);
+				/* -webkit-box-shadow: 4px 4px 4px 4px rgba(48, 50, 50, 0.48);
+				 -moz-box-shadow:    4px 4px 4px 4px rgba(48, 50, 50, 0.48);
+			 	box-shadow:    4px 4px 4px 4px rgba(48, 50, 50, 0.48);*/
+				border-radius: 1%;
+				color: rgba(000,000,000,1.0);
+				text-align: center;
+				}
+	
+	.brand-logo{width: 136px; height: 136px;
+			margin: 0px auto 10px;
+			display: block;
+			border-radius: 2%;}
+
+	.crudpane-sm{background-color: rgba(0,0,0,0.5);
+				 color: rgba(255,255,255,1.0);
+				 vertical-align: middle; text-align: center;
+				 padding: 1%; padding-left: 8%;
+				 border-radius: 5%;}
+				 
+			     /*#brand{background-color: rgba(255,255,255,1.0);}*/
+			     
+	#crud-jumbo-panne{background-color: rgba(000,000,000,0.80);
+				 	  -webkit-box-shadow: 4px 4px 4px 4px rgba(48, 50, 50, 0.48);
+				 	  -moz-box-shadow:    4px 4px 4px 4px rgba(48, 50, 50, 0.48);
+			 		  box-shadow:    4px 4px 4px 4px rgba(48, 50, 50, 0.48);
+			 		  text-align: justify;}
+			 		  
+	#activate-h1{color: rgba(255,255,0,1.0);}		 		  
+	#log-in-pane{padding-top: 10%;}
+	#form-title{background-color: #73008C;
+				color: rgba(255,255,255,1.0);
+	}
