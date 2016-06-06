@@ -69,7 +69,7 @@ public class Producto {
 	public void setImagen_5(String imagen_5) {this.imagen_5 = imagen_5;}
 	
 	
-	//Class values
+	//Class members
 	private int id;
 	private String nombre;
 	private String descripcion;

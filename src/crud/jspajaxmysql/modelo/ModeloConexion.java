@@ -7,12 +7,13 @@ import java.sql.SQLException;
 public class ModeloConexion {
 
 	public ModeloConexion()
-		{
+		{	
 			try {
 				 System.out.println("Opening SQLPipe....");
 				 Class.forName(JClassName);
 			     dbLink= DriverManager.getConnection(URL, dbUserName, dbPassword);
-			     System.out.println("SQLPipe successfully opened!");
+			     if (dbLink != null ) {System.out.println("SQLPipe successfully opened!");}
+			     else {System.out.println("error while openening SQLPipe");}
 			    } 
 			catch (ClassNotFoundException e) 
 				{System.err.println("ERROR: "+e.getMessage());}

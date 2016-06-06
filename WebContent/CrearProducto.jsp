@@ -18,26 +18,44 @@
 								<h2>Registro de Producto</h2>
 							</div>
 						</div>
-						<form id="sign-up-form" name="sign-in-form" action="doSignUp" class="fcc-form" method="post">
+						<form id="create-product-form" name="create-product-form" action="crearproducto" class="fcc-form" method="post" enctype="multipart/form-data">
 								<div class="form-group">
-									<input id="_username" type="text" class="form-control" placeholder="User-Name" name="_username" required autofocus>
+									<input id="_nombre" type="text" class="form-control" placeholder="Nombre del producto" name="_nombre" required autofocus>
 								</div>
 								<div class="form-group">
-									<input id="_email"  type="email" class="form-control" placeholder="e-Mail" name="_email" required="true">
+									<textarea cols="30" rows="6" id="_descripcion"  class="form-control" placeholder="Descripcion del producto" name="_descripcion" form="create-product-form" required="true"></textarea>
 								</div>
 								<div  class="form-group">
-									<input id="_userpass" type="password" class="form-control" placeholder="Password" name="_userpass" required="true">
+									<input id="_precio" type="text" class="form-control" placeholder="Precio del producto MXN" name="_precio" required="true">
 								</div>
 								<div class="form-group">
-									<input id="_userpassv"  type="password" class="form-control" placeholder="Confirm Password" name="_userpassv" required="true">
+									<input id="_categoria"  type="text" class="form-control" placeholder="Categoria del producto" name="_categoria" required="true">
 								</div>
-								<div class="form-group checkbox fcc-pane-sm" id="iAgree">
-									<label for="_agree" class="checkbox">
-										<input id="_agree" type="checkbox" value="1" name="_agree" required="true">I have read and accept the <a href="#">Terms and conditions</a> for the service and products.</input>
-										
+								<div  class="form-group">
+									<textarea cols="30" rows="6" id="_detalles"  class="form-control" placeholder="Detalles del producto" name="_detalles" form="create-product-form" required="true"></textarea>
+								</div>
+								<div  class="form-group">
+									<textarea cols="30" rows="6" id="_reviews"  class="form-control" placeholder="Reviews acerca del producto" name="_reviews" form="create-product-form" required="true"></textarea>
+								</div>
+								<div  class="form-group">
+									<select id="_size" class="form-control" name="_size" required="true">
+										<%for(int i=1; i<20; i++){%>
+											<option value="<%= i%>"><%= i%></option>
+										<%}%>
+									</select>
+								</div>
+								<div  class="form-group">
+									<input id="_color" type="text" class="form-control" placeholder="Color(es) del producto" name="_color" required="true">
+								</div>
+								<div  class="form-group">
+									<input type="file" name="product_photos[]" id="product_photos[]" multiple >
+								</div>
+								<div class="form-group checkbox fcc-pane-sm" id="continue-registration">
+									<label for="_continue-registration" class="checkbox">
+										<input id="_continue-registration" type="checkbox" value="1" name="_continue-registration" required="false">Deseo registrar mas productos.</input>		
 									</label>
-								</div>
-								<button id="_send" class="btn btn-default btn-block" type="submit">Create Account</button>
+								</div><button id="_clear-form" class="btn btn-danger btn-large" type="reset" value="Limpiar formulario" text="Limpiar formulario">Limpiar formulario</button>
+								<button id="_register-product" class="btn btn-success btn-large" type="submit"value="Registrar Producto">Registrar Producto</button>
 						</form>
 					</div>
 				<script src="js/jquery-1.11.3.js"></script>

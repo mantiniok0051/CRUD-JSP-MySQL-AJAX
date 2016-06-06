@@ -8,10 +8,10 @@ public class ModeloProducto extends ModeloConexion {
 	
 	public boolean crearProducto(Producto prod){
 		
-		PreparedStatement pst= null;
-		boolean flag= false;
+		PreparedStatement pst= null; //MySQL Query that calls Stored Procedure "insertProducto"
+		boolean flag= false; //to signal the success of the operation 
 		
-		try {
+		try {	//Build MySQL query
 				String sql= "call insertProducto(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				pst= getConnection().prepareStatement(sql);
 					pst.setString(1, prod.getNombre());
@@ -27,18 +27,19 @@ public class ModeloProducto extends ModeloConexion {
 					pst.setString(11, prod.getImagen_3());
 					pst.setString(12, prod.getImagen_4());
 					pst.setString(13, prod.getImagen_5());
-					
+					//Execute and signal success
 					if (pst.executeUpdate() == 1) { flag= true;	}
 						
 			} 
 		catch (Exception e) {System.err.print(e.getMessage());}
-		finally {
+		finally { //Close connection
 					try {
 							if (getConnection() != null) {getConnection().close();}
 							if (pst != null){pst.close();}
 						} 
 					catch (Exception e2) {}
 				}
+		//Report success
 		return flag;
 	}
 	
