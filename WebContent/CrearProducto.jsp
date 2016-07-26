@@ -45,14 +45,14 @@
 									</select>
 								</div>
 								<div  class="form-group">
-									<input id="_color" type="text" class="form-control" placeholder="Color(es) del producto" name="_color" required="true">
+									<input id="_color" type="text" class="form-control" placeholder="Color(es) del producto" name="_color" required="true"/>
 								</div>
 								<div  class="form-group">
-									<input type="file" name="product_photos[]" id="product_photos[]" multiple >
+									<input type="file" name="product_photos[]" id="product_photos" multiple/>
 								</div>
 								<div class="form-group checkbox fcc-pane-sm" id="continue-registration">
 									<label for="_continue-registration" class="checkbox">
-										<input id="_continue-registration" type="checkbox" value="1" name="_continue-registration" required="false">Deseo registrar mas productos.</input>		
+										<input id="_continue-registration" type="checkbox" value="1" name="_continue-registration" >Deseo registrar mas productos.</input>		
 									</label>
 								</div><button id="_clear-form" class="btn btn-danger btn-large" type="reset" value="Limpiar formulario" text="Limpiar formulario">Limpiar formulario</button>
 								<button id="_register-product" class="btn btn-success btn-large" type="submit"value="Registrar Producto">Registrar Producto</button>

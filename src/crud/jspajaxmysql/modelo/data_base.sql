@@ -1,4 +1,4 @@
-create database if not exists _comercio;
+/*create database if not exists _comercio;
 use _comercio;
 
 create table if not exists productos(
@@ -35,5 +35,14 @@ create procedure insertProducto(
     _imagen_5 varchar(100) 
     )begin
 insert into productos(nombre, descripcion, precio, categoria, detalles, reviews, size, color, imagen_1, imagen_2, imagen_3, imagen_4, imagen_5)values (_nombre, _descripcion, _precio, _categoria, _detalles, _reviews, _size, _color, _imagen_1, _imagen_2, _imagen_3, _imagen_4, _imagen_5);
+end
+delimiter;
+
+*/
+
+delimiter //
+create procedure selectAllProductos(
+)begin
+SELECT * FROM `productos`;
 end
 delimiter;

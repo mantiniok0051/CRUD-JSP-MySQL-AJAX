@@ -1,6 +1,8 @@
 package crud.jspajaxmysql.modelo;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import crud.jspajax.mysql.include.Producto;
 
@@ -42,6 +44,37 @@ public class ModeloProducto extends ModeloConexion {
 		//Report success
 		return flag;
 	}
+	
+	public ArrayList<Producto> getAllProductos(){
+		ArrayList<Producto> productos = new ArrayList<>();
+		PreparedStatement pst= null;
+		ResultSet rs = null;
+		
+			try {
+					String sql= "call selectAllProductos()";
+					pst= getConnection().prepareCall(sql);
+					rs= pst.executeQuery();
+					
+						while (rs.next()) {
+							productos.add(new Producto(rs.getInt("id_producto"), rs.getString("nombre"), rs.getString("descripcion"), rs.getString("categoria"), rs.getFloat("precio"), rs.getString("detalles"), rs.getString("reviews"), rs.getInt("size"), rs.getString("color"), rs.getString("imagen_1"), rs.getString("imagen_2"), rs.getString("imagen_3"), rs.getString("imagen_4"), rs.getString("imagen_5")));
+							
+						}
+				}
+			catch (Exception e) {System.out.println(e.getMessage());}
+			finally {
+						try {
+							    if (getConnection() != null) {getConnection().close();}
+							    if (pst != null) {pst.close();}
+							    if (rs != null) {rs.close();}
+							    
+						} catch (Exception e2) {
+							// TODO: handle exception
+						}
+			}
+		
+		return productos;
+	}
+	
 	
 	
 //	public static void main(String[] args){
